@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714172556) do
+ActiveRecord::Schema.define(version: 20160725182934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,9 @@ ActiveRecord::Schema.define(version: 20160714172556) do
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.string   "writers"
-    t.date     "date"
-    t.time     "time"
     t.string   "venue"
     t.string   "performers"
+    t.text     "description"
     t.string   "price_range"
     t.string   "ticket_link"
     t.string   "video_link"
@@ -39,6 +38,15 @@ ActiveRecord::Schema.define(version: 20160714172556) do
 
   add_index "favorites", ["event_id"], name: "index_favorites_on_event_id", using: :btree
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
+
+  create_table "performances", force: :cascade do |t|
+    t.string   "start_time"
+    t.string   "end_time"
+    t.date     "date"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                           null: false

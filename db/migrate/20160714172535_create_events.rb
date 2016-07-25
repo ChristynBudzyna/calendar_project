@@ -3,10 +3,9 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :title
       t.string :writers
-      t.date :date
-      t.time :time
       t.string :venue
       t.string :performers
+      t.text :description
       t.string :price_range
       t.string :ticket_link
       t.string :video_link
