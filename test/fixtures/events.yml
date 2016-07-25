@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  writers: MyString
+  date: 2016-07-14
+  time: 2016-07-14 13:25:35
+  venue: MyString
+  performers: MyString
+  price_range: MyString
+  ticket_link: MyString
+  video_link: MyString
+
+two:
+  title: MyString
+  writers: MyString
+  date: 2016-07-14
+  time: 2016-07-14 13:25:35
+  venue: MyString
+  performers: MyString
+  price_range: MyString
+  ticket_link: MyString
+  video_link: MyString
