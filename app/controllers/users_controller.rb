@@ -7,7 +7,7 @@ end
 def create
   @user = User.new(user_params)
   if @user.save
-    redirect_to root_path
+    redirect_to events_path
     session[:user_id] = @user.id
   else
     render 'new'
@@ -20,7 +20,7 @@ end
 
 private
   def user_params
-    params.require(:user).permit(:email, :password, :role)
+    params.require(:user).permit(:email, :password, :role, :admin?)
   end
 
 end
