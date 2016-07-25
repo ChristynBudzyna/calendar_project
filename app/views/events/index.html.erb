@@ -1,7 +1,16 @@
-<div id="calendar">
 
- <h1><%=h @date.strftime("%B %Y") %></h1>
-<%= calendar_for(@performances) do |t| %>
+<h1>Upcoming New Works</h1>
+<% if logged_in? %>
+  <%= link_to "Add An Event", new_event_path %>
+<% end %>
+<div id="calendar">
+  <h2 id="month">
+    <%= link_to "<", :month => (@date.beginning_of_month-1) %>
+    <%=h @date.strftime("%B %Y") %>
+    <%= link_to ">", :month => (@date.end_of_month+1) %>
+  </h2>
+
+<%= calendar_for(@performances, :year => @date.year, :month => @date.month) do |t| %>
   <%= t.head('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') %>
   <%= t.day do |day, performances| %>
     <%= day.day %>
