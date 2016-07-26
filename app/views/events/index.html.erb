@@ -1,1 +1,26 @@
-<p> This will be the calendar </p>
+
+<h1>Upcoming New Works</h1>
+<% if logged_in? %>
+  <%= link_to "Add An Event", new_event_path %>
+<% end %>
+<div id="calendar">
+  <h2 id="month">
+    <%= link_to "<", :month => (@date.beginning_of_month-1) %>
+    <%=h @date.strftime("%B %Y") %>
+    <%= link_to ">", :month => (@date.end_of_month+1) %>
+  </h2>
+
+<%= calendar_for(@performances, :year => @date.year, :month => @date.month) do |t| %>
+  <%= t.head('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') %>
+  <%= t.day do |day, performances| %>
+    <%= day.day %>
+  <ul>
+    <% performances.each do |performance| %>
+      <li><%= link_to performance.event.title, event_path(performance.event.id) %></li>
+      <li><%= performance.start_time %> - <%= performance.end_time %></li>
+    <% end %>
+  </ul>
+  <% end %>
+<% end %>
+</div>
+
