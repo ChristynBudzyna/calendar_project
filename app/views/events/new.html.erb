@@ -42,10 +42,24 @@
     <%=f.text_area :description %>
   </p>
     <p>
+    <%=f.fields_for :performances do |builder| %><br>
+      <p>
+        <%= builder.label :date, "Date" %>
+        <%= builder.text_field :date %>
+        <%= builder.label :start_time, "Start Time" %>
+        <%= builder.text_field :start_time %>
+        <%= builder.label :end_time, "End Time" %>
+        <%= builder.text_field :end_time %>
+      </p>
+    <% end %>
+  </p>
+
+
+    <p>
     <%=f.hidden_field :approved?, :value => false %>
   </p>
 
    <p>
     <%=f.submit "Submit New Event" %>
   </p>
-<% end %>
+  <% end %>

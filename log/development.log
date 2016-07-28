@@ -1761,3 +1761,192 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-28 18:23:11 -0400
+
+
+Started GET "/events/new" for ::1 at 2016-07-28 18:44:09 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 3.9ms)
+
+SyntaxError (/Users/christynbudzyna/calendar_project/calendar_project/app/views/events/new.html.erb:61: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/christynbudzyna/calendar_project/calendar_project/app/views/events/new.html.erb:63: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/events/new.html.erb:61: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/events/new.html.erb:63: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (115.8ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-28 18:44:46 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/christynbudzyna/calendar_project/calendar_project/app/views/events/new.html.erb:62: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/christynbudzyna/calendar_project/calendar_project/app/views/events/new.html.erb:64: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/events/new.html.erb:62: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/events/new.html.erb:64: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (41.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (90.7ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-28 18:45:00 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (35.6ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 298ms (Views: 294.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/application.self-2804e9b00bd7c05103619a9a886df2048667467b82329ba0d7f9b893e165604d.css?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-28 18:45:00 -0400
+
+
+Started GET "/events/new" for ::1 at 2016-07-28 18:47:00 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (20.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 55ms (Views: 51.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/application.self-2804e9b00bd7c05103619a9a886df2048667467b82329ba0d7f9b893e165604d.css?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-28 18:47:00 -0400
+
+
+Started GET "/events/new" for ::1 at 2016-07-28 18:47:32 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (5.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/application.self-2804e9b00bd7c05103619a9a886df2048667467b82329ba0d7f9b893e165604d.css?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-28 18:47:32 -0400

@@ -11,6 +11,7 @@ end
 
 def new
   @event = Event.new
+  3.times { @event.performances.build }
 end
 
 def create
