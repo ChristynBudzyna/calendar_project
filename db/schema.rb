@@ -25,8 +25,9 @@ ActiveRecord::Schema.define(version: 20160725182934) do
     t.string   "price_range"
     t.string   "ticket_link"
     t.string   "video_link"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "approved?",   default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "favorites", force: :cascade do |t|

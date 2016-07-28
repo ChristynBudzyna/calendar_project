@@ -15,10 +15,12 @@ end
 
 def create
   @event = Event.new(event_params)
+  binding.pry
    if @event.save
       performances.each do |performance|
         @event.performances << Performance.create(performance_params)
       end
+    redirect_to "/thankyou"
     end
 end
 
@@ -29,5 +31,5 @@ end
 
     def performance_params
       params.require( :performance ).permit(:start_time, :end_time, :date, :event_id)
-
+    end
 end
