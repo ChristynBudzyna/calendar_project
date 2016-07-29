@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   get '/thankyou', to: 'pages#thankyou'
+  root :to => 'events#index'
+
 end

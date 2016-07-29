@@ -11,26 +11,26 @@ end
 
 def new
   @event = Event.new
-  3.times { @event.performances.build }
+  1.times { @event.performances.build }
 end
 
 def create
   @event = Event.new(event_params)
-  binding.pry
-   if @event.save
-      performances.each do |performance|
-        @event.performances << Performance.create(performance_params)
-      end
+  if @event.save
+    binding.pry
     redirect_to "/thankyou"
-    end
+  else
+    render "events#new"
+  end
 end
+
 
  private
     def event_params
-      params.require( :event ).permit( :title, :writers, :venue, :performers, :description, :price_range, :ticket_link, :video_link)
+      params.require( :event ).permit( :title, :writers, :venue, :performers, :description, :price_range, :ticket_link, :video_link, performances_attributes: [:date, :start_time, :end_time])
     end
 
-    def performance_params
-      params.require( :performance ).permit(:start_time, :end_time, :date, :event_id)
-    end
+    # def performance_params
+    #   params.require( :performance ).permit(:start_time, :end_time, :date)
+    # end
 end

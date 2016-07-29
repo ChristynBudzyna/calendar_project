@@ -42,14 +42,14 @@
     <%=f.text_area :description %>
   </p>
     <p>
-    <%=f.fields_for :performances do |builder| %><br>
+    <%=f.fields_for :performances do |performance| %><br>
       <p>
-        <%= builder.label :date, "Date" %>
-        <%= builder.text_field :date %>
-        <%= builder.label :start_time, "Start Time" %>
-        <%= builder.text_field :start_time %>
-        <%= builder.label :end_time, "End Time" %>
-        <%= builder.text_field :end_time %>
+        <%= performance.label :date, "Date" %>
+        <%= performance.text_field :date %>
+        <%= performance.label :start_time, "Start Time" %>
+        <%= performance.text_field :start_time %>
+        <%= performance.label :end_time, "End Time" %>
+        <%= performance.text_field :end_time %>
       </p>
     <% end %>
   </p>

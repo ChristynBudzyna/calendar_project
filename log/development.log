@@ -1950,3 +1950,1055 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-28 18:47:32 -0400
+
+
+Started GET "/events/new" for ::1 at 2016-07-28 18:50:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (27.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 370ms (Views: 323.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/application.self-2804e9b00bd7c05103619a9a886df2048667467b82329ba0d7f9b893e165604d.css?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-28 18:50:30 -0400
+
+
+Started POST "/events" for ::1 at 2016-07-28 18:51:59 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qA5IV9H3q2QtYsqwfdQ7ylrCE41PxO4IIKUPZdl4yx8acFQ9CCEGjMFyu2kXfP68dPbSccG3NhNZKnCgMEzB2g==", "event"=>{"title"=>"Another cool test", "writers"=>"here it is", "venue"=>"blah", "performers"=>"people", "ticket_link"=>"stuff", "video_link"=>"whatever", "price_range"=>"$10-$20", "description"=>"the best show", "performances_attributes"=>{"0"=>{"date"=>"Mon, 25 Jul 2016", "start_time"=>"8:00pm", "end_time"=>"10:00pm"}, "1"=>{"date"=>"", "start_time"=>"", "end_time"=>""}, "2"=>{"date"=>"", "start_time"=>"", "end_time"=>""}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "Another cool test"], ["writers", "here it is"], ["venue", "blah"], ["performers", "people"], ["description", "the best show"], ["price_range", "$10-$20"], ["ticket_link", "stuff"], ["video_link", "whatever"], ["created_at", "2016-07-28 22:52:15.800003"], ["updated_at", "2016-07-28 22:52:15.800003"]]
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 15845ms (ActiveRecord: 9.2ms)
+
+NameError (undefined local variable or method `performances' for #<EventsController:0x007f81cb082c68>):
+  app/controllers/events_controller.rb:21:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (108.0ms)
+
+
+Started GET "/" for ::1 at 2016-07-29 15:01:37 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (5.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 26ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for ::1 at 2016-07-29 15:01:42 -0400
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPerformance Load (0.5ms)[0m  [1mSELECT "performances".* FROM "performances"[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered events/index.html.erb within layouts/application (89.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 411ms (Views: 380.3ms | ActiveRecord: 25.0ms)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:01:42 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:01:42 -0400
+
+
+Started GET "/" for ::1 at 2016-07-29 15:02:28 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPerformance Load (0.3ms)[0m  SELECT "performances".* FROM "performances"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/index.html.erb within layouts/application (60.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 98ms (Views: 91.0ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/events?month=2016-06-30" for ::1 at 2016-07-29 15:02:32 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"month"=>"2016-06-30"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPerformance Load (0.3ms)[0m  [1mSELECT "performances".* FROM "performances"[0m
+  Rendered events/index.html.erb within layouts/application (7.1ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events?month=2016-07-01" for ::1 at 2016-07-29 15:02:34 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"month"=>"2016-07-01"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPerformance Load (0.3ms)[0m  SELECT "performances".* FROM "performances"
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/index.html.erb within layouts/application (13.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events?month=2016-08-01" for ::1 at 2016-07-29 15:02:36 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"month"=>"2016-08-01"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPerformance Load (0.2ms)[0m  [1mSELECT "performances".* FROM "performances"[0m
+  Rendered events/index.html.erb within layouts/application (3.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events?month=2016-07-31" for ::1 at 2016-07-29 15:04:46 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"month"=>"2016-07-31"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPerformance Load (0.5ms)[0m  SELECT "performances".* FROM "performances"
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered events/index.html.erb within layouts/application (6.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-07-29 15:05:09 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (28.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 57ms (Views: 50.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for ::1 at 2016-07-29 15:05:15 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Nk9PS3oCoFY8gyhkHlN5sJGh4L36d+yZeJE8czivaxCEMVMho9QNvtCTWb10+7zGv5UhQXQENIIBHkO20Zth1Q==", "user"=>{"email"=>"new@new.com", "password"=>"[FILTERED]", "role"=>"Director", "admin"=>"false"}, "commit"=>"Sign Up"}
+Unpermitted parameter: admin
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "users" ("email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["email", "new@new.com"], ["password_digest", "$2a$10$2O9J7i0eHtV5bwso555pWOKaUV.HFkATlzh8yqszTNCZnv6PlhGRO"], ["role", "Director"], ["created_at", "2016-07-29 19:05:15.400076"], ["updated_at", "2016-07-29 19:05:15.400076"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events
+Completed 302 Found in 82ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/events" for ::1 at 2016-07-29 15:05:15 -0400
+Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPerformance Load (0.3ms)[0m  [1mSELECT "performances".* FROM "performances"[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered events/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:05:17 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (7.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 45ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:05:59 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:06:54 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WSr74HALRduPNkZ/doCL4pBs+F7LSfIl847Bwe0ekbjrVOeKqd3oM2MmN6YcKE6Uvlg5okU6Kj6KAb4EBCqbfQ==", "event"=>{"title"=>"new title", "writers"=>"writers", "venue"=>"venue", "performers"=>"perf", "ticket_link"=>"link", "video_link"=>"other link", "price_range"=>"$30-$40", "description"=>"The coolest show ever", "performances_attributes"=>{"0"=>{"date"=>"12-8-16", "start_time"=>"8:00am", "end_time"=>"9:00pm"}, "1"=>{"date"=>"12-8-16", "start_time"=>"2:00", "end_time"=>"4:00"}, "2"=>{"date"=>"", "start_time"=>"", "end_time"=>""}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "new title"], ["writers", "writers"], ["venue", "venue"], ["performers", "perf"], ["description", "The coolest show ever"], ["price_range", "$30-$40"], ["ticket_link", "link"], ["video_link", "other link"], ["created_at", "2016-07-29 19:08:20.049979"], ["updated_at", "2016-07-29 19:08:20.049979"]]
+  [1m[35m (8.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/thankyou
+Completed 302 Found in 85854ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/thankyou" for ::1 at 2016-07-29 15:08:20 -0400
+Processing by PagesController#thankyou as HTML
+  Rendered pages/thankyou.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:21:29 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (30.9ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 378ms (Views: 325.5ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:21:54 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pPaiIik70IAYEFnXCuxCQuBY/SDXPqFgvDA4UiP40LAWiL5I8O19aPQAKA5gRIc0zmw83FlNeXvFv0eXyszadQ==", "event"=>{"title"=>"stuff", "writers"=>"stuff", "venue"=>"sutadf", "performers"=>"asdfasdf", "ticket_link"=>"asdf", "video_link"=>"asdf", "price_range"=>"$10-$20", "description"=>"asdfasdf", "performances_attributes"=>{"0"=>{"date"=>"3/4/05", "start_time"=>"8:00", "end_time"=>"10:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/events_controller.rb:18:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (130.5ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:22:28 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pPaiIik70IAYEFnXCuxCQuBY/SDXPqFgvDA4UiP40LAWiL5I8O19aPQAKA5gRIc0zmw83FlNeXvFv0eXyszadQ==", "event"=>{"title"=>"stuff", "writers"=>"stuff", "venue"=>"sutadf", "performers"=>"asdfasdf", "ticket_link"=>"asdf", "video_link"=>"asdf", "price_range"=>"$10-$20", "description"=>"asdfasdf", "performances_attributes"=>{"0"=>{"date"=>"3/4/05", "start_time"=>"8:00", "end_time"=>"10:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Completed 500 Internal Server Error in 29727ms (ActiveRecord: 1.5ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/events_controller.rb:19:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (95.0ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:23:01 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (5.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 67ms (Views: 43.6ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/application.self-2804e9b00bd7c05103619a9a886df2048667467b82329ba0d7f9b893e165604d.css?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-29 15:23:01 -0400
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:23:24 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4w6C49K6bH6CZIiwdYjNWriK8s3VK6eqVo+N92rGJcJRcJ6JC2zBlm50+WkfIAgslr4zMVtYf7EvAPIyg/IvBw==", "event"=>{"title"=>"asdfa", "writers"=>"asdf", "venue"=>"asdf", "performers"=>"asdf", "ticket_link"=>"asdf", "video_link"=>"asdf", "price_range"=>"< $10", "description"=>"asdf", "performances_attributes"=>{"0"=>{"date"=>"daaf", "start_time"=>"8:00", "end_time"=>"9:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.5ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/events_controller.rb:18:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (97.7ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:24:56 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (3.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 56ms (Views: 39.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/application.self-2804e9b00bd7c05103619a9a886df2048667467b82329ba0d7f9b893e165604d.css?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-29 15:24:57 -0400
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:25:11 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"28U74q116VAfvWkFoa+8F9QdEPtFfBjwb41ticwAAT5puyeIdKNEuPOtGNzLB3lh+inRB8sPwOsWAhJMJTQL+w==", "event"=>{"title"=>"asdf", "writers"=>"sadf", "venue"=>"sdf", "performers"=>"asdf", "ticket_link"=>"asdf", "video_link"=>"asdf", "price_range"=>"< $10", "description"=>"asdf", "performances_attributes"=>{"0"=>{"date"=>"4/5/06", "start_time"=>"2:00", "end_time"=>"4:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "asdf"], ["writers", "sadf"], ["venue", "sdf"], ["performers", "asdf"], ["description", "asdf"], ["price_range", "< $10"], ["ticket_link", "asdf"], ["video_link", "asdf"], ["created_at", "2016-07-29 19:25:11.265907"], ["updated_at", "2016-07-29 19:25:11.265907"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/thankyou
+Completed 302 Found in 205436ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/thankyou" for ::1 at 2016-07-29 15:28:36 -0400
+Processing by PagesController#thankyou as HTML
+  Rendered pages/thankyou.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:28:48 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 45ms (Views: 26.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/application.self-2804e9b00bd7c05103619a9a886df2048667467b82329ba0d7f9b893e165604d.css?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-29 15:28:48 -0400
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:29:11 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vIDjfy4Dp9NNC/cG6zjmrHXKMJsPrcISXBOh0isLdWgO/v8V99UKO6Ebht+BkCPaW/7xZ4HeGgklnN4Xwj9/rQ==", "event"=>{"title"=>"another test", "writers"=>"another test", "venue"=>"another test", "performers"=>"another test", "ticket_link"=>"another test", "video_link"=>"another test", "price_range"=>"< $10", "description"=>"another test", "performances_attributes"=>{"0"=>{"date"=>"5/6/07", "start_time"=>"3:00", "end_time"=>"6:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "another test"], ["writers", "another test"], ["venue", "another test"], ["performers", "another test"], ["description", "another test"], ["price_range", "< $10"], ["ticket_link", "another test"], ["video_link", "another test"], ["created_at", "2016-07-29 19:29:11.235509"], ["updated_at", "2016-07-29 19:29:11.235509"]]
+  [1m[35m (5.8ms)[0m  COMMIT
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 6.2ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/events_controller.rb:22:in `block in create'
+  app/controllers/events_controller.rb:21:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.7ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (95.6ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:29:38 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vIDjfy4Dp9NNC/cG6zjmrHXKMJsPrcISXBOh0isLdWgO/v8V99UKO6Ebht+BkCPaW/7xZ4HeGgklnN4Xwj9/rQ==", "event"=>{"title"=>"another test", "writers"=>"another test", "venue"=>"another test", "performers"=>"another test", "ticket_link"=>"another test", "video_link"=>"another test", "price_range"=>"< $10", "description"=>"another test", "performances_attributes"=>{"0"=>{"date"=>"5/6/07", "start_time"=>"3:00", "end_time"=>"6:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "another test"], ["writers", "another test"], ["venue", "another test"], ["performers", "another test"], ["description", "another test"], ["price_range", "< $10"], ["ticket_link", "another test"], ["video_link", "another test"], ["created_at", "2016-07-29 19:29:38.279330"], ["updated_at", "2016-07-29 19:29:38.279330"]]
+  [1m[36m (8.4ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 45719ms (ActiveRecord: 11.8ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/events_controller.rb:23:in `block in create'
+  app/controllers/events_controller.rb:22:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (96.2ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:30:28 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vIDjfy4Dp9NNC/cG6zjmrHXKMJsPrcISXBOh0isLdWgO/v8V99UKO6Ebht+BkCPaW/7xZ4HeGgklnN4Xwj9/rQ==", "event"=>{"title"=>"another test", "writers"=>"another test", "venue"=>"another test", "performers"=>"another test", "ticket_link"=>"another test", "video_link"=>"another test", "price_range"=>"< $10", "description"=>"another test", "performances_attributes"=>{"0"=>{"date"=>"5/6/07", "start_time"=>"3:00", "end_time"=>"6:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "another test"], ["writers", "another test"], ["venue", "another test"], ["performers", "another test"], ["description", "another test"], ["price_range", "< $10"], ["ticket_link", "another test"], ["video_link", "another test"], ["created_at", "2016-07-29 19:30:28.854361"], ["updated_at", "2016-07-29 19:30:28.854361"]]
+  [1m[35m (8.4ms)[0m  COMMIT
+Completed 500 Internal Server Error in 77290ms (ActiveRecord: 11.5ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/events_controller.rb:23:in `block in create'
+  app/controllers/events_controller.rb:21:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (93.5ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:31:57 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vIDjfy4Dp9NNC/cG6zjmrHXKMJsPrcISXBOh0isLdWgO/v8V99UKO6Ebht+BkCPaW/7xZ4HeGgklnN4Xwj9/rQ==", "event"=>{"title"=>"another test", "writers"=>"another test", "venue"=>"another test", "performers"=>"another test", "ticket_link"=>"another test", "video_link"=>"another test", "price_range"=>"< $10", "description"=>"another test", "performances_attributes"=>{"0"=>{"date"=>"5/6/07", "start_time"=>"3:00", "end_time"=>"6:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "another test"], ["writers", "another test"], ["venue", "another test"], ["performers", "another test"], ["description", "another test"], ["price_range", "< $10"], ["ticket_link", "another test"], ["video_link", "another test"], ["created_at", "2016-07-29 19:31:57.590019"], ["updated_at", "2016-07-29 19:31:57.590019"]]
+  [1m[36m (5.1ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 7.8ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/events_controller.rb:22:in `block in create'
+  app/controllers/events_controller.rb:21:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (91.7ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:34:52 -0400
+
+SyntaxError (/Users/christynbudzyna/calendar_project/calendar_project/app/controllers/events_controller.rb:39: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:39: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (95.0ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:35:31 -0400
+
+SyntaxError (/Users/christynbudzyna/calendar_project/calendar_project/app/controllers/events_controller.rb:39: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:39: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (92.5ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:35:51 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (3.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 55ms (Views: 35.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/application.self-2804e9b00bd7c05103619a9a886df2048667467b82329ba0d7f9b893e165604d.css?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-29 15:35:51 -0400
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:36:07 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GR6JgNSWV9q99TX8Eapphgjj3G55WIK1LK+yEoobKsKrYJXqDUD6MlHlRCV7AqzwJtcdkvcrWq5VIM3XYy8gBw==", "event"=>{"title"=>"anothertry", "writers"=>"anothertry", "venue"=>"anothertry", "performers"=>"anothertry", "ticket_link"=>"anothertry", "video_link"=>"anothertry", "price_range"=>"< $10", "description"=>"anothertry", "performances_attributes"=>{"0"=>{"date"=>"434", "start_time"=>"434", "end_time"=>"424"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "anothertry"], ["writers", "anothertry"], ["venue", "anothertry"], ["performers", "anothertry"], ["description", "anothertry"], ["price_range", "< $10"], ["ticket_link", "anothertry"], ["video_link", "anothertry"], ["created_at", "2016-07-29 19:36:07.629161"], ["updated_at", "2016-07-29 19:36:07.629161"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 6.3ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/events_controller.rb:22:in `block in create'
+  app/controllers/events_controller.rb:21:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (90.5ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:38:16 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GR6JgNSWV9q99TX8Eapphgjj3G55WIK1LK+yEoobKsKrYJXqDUD6MlHlRCV7AqzwJtcdkvcrWq5VIM3XYy8gBw==", "event"=>{"title"=>"anothertry", "writers"=>"anothertry", "venue"=>"anothertry", "performers"=>"anothertry", "ticket_link"=>"anothertry", "video_link"=>"anothertry", "price_range"=>"< $10", "description"=>"anothertry", "performances_attributes"=>{"0"=>{"date"=>"434", "start_time"=>"434", "end_time"=>"424"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "anothertry"], ["writers", "anothertry"], ["venue", "anothertry"], ["performers", "anothertry"], ["description", "anothertry"], ["price_range", "< $10"], ["ticket_link", "anothertry"], ["video_link", "anothertry"], ["created_at", "2016-07-29 19:38:16.703847"], ["updated_at", "2016-07-29 19:38:16.703847"]]
+  [1m[35m (8.4ms)[0m  COMMIT
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 10.5ms)
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/events_controller.rb:21:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (85.5ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:39:23 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GR6JgNSWV9q99TX8Eapphgjj3G55WIK1LK+yEoobKsKrYJXqDUD6MlHlRCV7AqzwJtcdkvcrWq5VIM3XYy8gBw==", "event"=>{"title"=>"anothertry", "writers"=>"anothertry", "venue"=>"anothertry", "performers"=>"anothertry", "ticket_link"=>"anothertry", "video_link"=>"anothertry", "price_range"=>"< $10", "description"=>"anothertry", "performances_attributes"=>{"0"=>{"date"=>"434", "start_time"=>"434", "end_time"=>"424"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "anothertry"], ["writers", "anothertry"], ["venue", "anothertry"], ["performers", "anothertry"], ["description", "anothertry"], ["price_range", "< $10"], ["ticket_link", "anothertry"], ["video_link", "anothertry"], ["created_at", "2016-07-29 19:39:23.372865"], ["updated_at", "2016-07-29 19:39:23.372865"]]
+  [1m[36m (7.9ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 11.3ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/events_controller.rb:22:in `block in create'
+  app/controllers/events_controller.rb:21:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (90.1ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:39:33 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GR6JgNSWV9q99TX8Eapphgjj3G55WIK1LK+yEoobKsKrYJXqDUD6MlHlRCV7AqzwJtcdkvcrWq5VIM3XYy8gBw==", "event"=>{"title"=>"anothertry", "writers"=>"anothertry", "venue"=>"anothertry", "performers"=>"anothertry", "ticket_link"=>"anothertry", "video_link"=>"anothertry", "price_range"=>"< $10", "description"=>"anothertry", "performances_attributes"=>{"0"=>{"date"=>"434", "start_time"=>"434", "end_time"=>"424"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "anothertry"], ["writers", "anothertry"], ["venue", "anothertry"], ["performers", "anothertry"], ["description", "anothertry"], ["price_range", "< $10"], ["ticket_link", "anothertry"], ["video_link", "anothertry"], ["created_at", "2016-07-29 19:39:33.457087"], ["updated_at", "2016-07-29 19:39:33.457087"]]
+  [1m[35m (8.5ms)[0m  COMMIT
+Completed 500 Internal Server Error in 34567ms (ActiveRecord: 11.4ms)
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/events_controller.rb:23:in `block in create'
+  app/controllers/events_controller.rb:21:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (43.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (96.0ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:40:11 -0400
+
+SyntaxError (/Users/christynbudzyna/calendar_project/calendar_project/app/controllers/events_controller.rb:26: syntax error, unexpected keyword_else, expecting keyword_end
+/Users/christynbudzyna/calendar_project/calendar_project/app/controllers/events_controller.rb:39: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/events_controller.rb:26: syntax error, unexpected keyword_else, expecting keyword_end
+  app/controllers/events_controller.rb:39: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (90.7ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 15:40:20 -0400
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 55ms (Views: 34.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/application.self-2804e9b00bd7c05103619a9a886df2048667467b82329ba0d7f9b893e165604d.css?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/events.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started GET "/assets/application.self-50cf463852f54b1bdceccd42cf4cea5da304a41299cd097a6cf226aabb0ee32a.js?body=1" for ::1 at 2016-07-29 15:40:20 -0400
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:40:36 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YO+rAzSx5uK/MaDr8q6VhPbQVrZe6ksaRSVfNXUnJW3Skbdp7WdLClMh0TKYBlDy2OSXStCZkwE8qiDwnBMvqA==", "event"=>{"title"=>"thisi s hard", "writers"=>"very hard", "venue"=>"very hard", "performers"=>"very hard", "ticket_link"=>"very hard", "video_link"=>"very hard", "price_range"=>"< $10", "description"=>"very hard", "performances_attributes"=>{"0"=>{"date"=>"3.4.5", "start_time"=>"2:00", "end_time"=>"4:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "thisi s hard"], ["writers", "very hard"], ["venue", "very hard"], ["performers", "very hard"], ["description", "very hard"], ["price_range", "< $10"], ["ticket_link", "very hard"], ["video_link", "very hard"], ["created_at", "2016-07-29 19:40:36.908432"], ["updated_at", "2016-07-29 19:40:36.908432"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "performances" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-07-29 19:40:36.918195"], ["updated_at", "2016-07-29 19:40:36.918195"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "performances" SET "event_id" = $1, "updated_at" = $2 WHERE "performances"."id" = $3[0m  [["event_id", 15], ["updated_at", "2016-07-29 19:40:36.927024"], ["id", 3]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "performances" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-07-29 19:40:36.930977"], ["updated_at", "2016-07-29 19:40:36.930977"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "performances" SET "event_id" = $1, "updated_at" = $2 WHERE "performances"."id" = $3[0m  [["event_id", 15], ["updated_at", "2016-07-29 19:40:36.934496"], ["id", 4]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/thankyou
+Completed 302 Found in 31ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/thankyou" for ::1 at 2016-07-29 15:40:36 -0400
+Processing by PagesController#thankyou as HTML
+  Rendered pages/thankyou.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:41:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YO+rAzSx5uK/MaDr8q6VhPbQVrZe6ksaRSVfNXUnJW3Skbdp7WdLClMh0TKYBlDy2OSXStCZkwE8qiDwnBMvqA==", "event"=>{"title"=>"thisi s hard", "writers"=>"very hard", "venue"=>"very hard", "performers"=>"very hard", "ticket_link"=>"very hard", "video_link"=>"very hard", "price_range"=>"< $10", "description"=>"very hard", "performances_attributes"=>{"0"=>{"date"=>"3.4.5", "start_time"=>"2:00", "end_time"=>"4:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "thisi s hard"], ["writers", "very hard"], ["venue", "very hard"], ["performers", "very hard"], ["description", "very hard"], ["price_range", "< $10"], ["ticket_link", "very hard"], ["video_link", "very hard"], ["created_at", "2016-07-29 19:41:25.973967"], ["updated_at", "2016-07-29 19:41:25.973967"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "performances" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-07-29 19:43:38.835061"], ["updated_at", "2016-07-29 19:43:38.835061"]]
+  [1m[36m (8.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "performances" SET "event_id" = $1, "updated_at" = $2 WHERE "performances"."id" = $3[0m  [["event_id", 16], ["updated_at", "2016-07-29 19:43:38.846546"], ["id", 5]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "performances" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2016-07-29 19:43:42.077614"], ["updated_at", "2016-07-29 19:43:42.077614"]]
+  [1m[36m (8.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "performances" SET "event_id" = $1, "updated_at" = $2 WHERE "performances"."id" = $3[0m  [["event_id", 16], ["updated_at", "2016-07-29 19:43:42.088573"], ["id", 6]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/thankyou
+Completed 302 Found in 136143ms (ActiveRecord: 24.5ms)
+
+
+Started GET "/thankyou" for ::1 at 2016-07-29 15:43:42 -0400
+Processing by PagesController#thankyou as HTML
+  Rendered pages/thankyou.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 304ms (Views: 300.0ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:46:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/christynbudzyna/calendar_project/calendar_project/app/controllers/events_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:40: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (46.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (96.9ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:46:55 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YO+rAzSx5uK/MaDr8q6VhPbQVrZe6ksaRSVfNXUnJW3Skbdp7WdLClMh0TKYBlDy2OSXStCZkwE8qiDwnBMvqA==", "event"=>{"title"=>"thisi s hard", "writers"=>"very hard", "venue"=>"very hard", "performers"=>"very hard", "ticket_link"=>"very hard", "video_link"=>"very hard", "price_range"=>"< $10", "description"=>"very hard", "performances_attributes"=>{"0"=>{"date"=>"3.4.5", "start_time"=>"2:00", "end_time"=>"4:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "thisi s hard"], ["writers", "very hard"], ["venue", "very hard"], ["performers", "very hard"], ["description", "very hard"], ["price_range", "< $10"], ["ticket_link", "very hard"], ["video_link", "very hard"], ["created_at", "2016-07-29 19:46:55.384807"], ["updated_at", "2016-07-29 19:46:55.384807"]]
+  [1m[35m (8.4ms)[0m  COMMIT
+Completed 500 Internal Server Error in 9700ms (ActiveRecord: 13.2ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/events_controller.rb:23:in `block in create'
+  app/controllers/events_controller.rb:21:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (91.8ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:48:16 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YO+rAzSx5uK/MaDr8q6VhPbQVrZe6ksaRSVfNXUnJW3Skbdp7WdLClMh0TKYBlDy2OSXStCZkwE8qiDwnBMvqA==", "event"=>{"title"=>"thisi s hard", "writers"=>"very hard", "venue"=>"very hard", "performers"=>"very hard", "ticket_link"=>"very hard", "video_link"=>"very hard", "price_range"=>"< $10", "description"=>"very hard", "performances_attributes"=>{"0"=>{"date"=>"3.4.5", "start_time"=>"2:00", "end_time"=>"4:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "thisi s hard"], ["writers", "very hard"], ["venue", "very hard"], ["performers", "very hard"], ["description", "very hard"], ["price_range", "< $10"], ["ticket_link", "very hard"], ["video_link", "very hard"], ["created_at", "2016-07-29 19:48:16.243798"], ["updated_at", "2016-07-29 19:48:16.243798"]]
+  [1m[36m (7.4ms)[0m  [1mCOMMIT[0m
+Unpermitted parameters: performances_attributes, approved
+Completed 500 Internal Server Error in 536228ms (ActiveRecord: 10.5ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/events_controller.rb:23:in `block in create'
+  app/controllers/events_controller.rb:22:in `create'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (97.7ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 15:57:26 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YO+rAzSx5uK/MaDr8q6VhPbQVrZe6ksaRSVfNXUnJW3Skbdp7WdLClMh0TKYBlDy2OSXStCZkwE8qiDwnBMvqA==", "event"=>{"title"=>"thisi s hard", "writers"=>"very hard", "venue"=>"very hard", "performers"=>"very hard", "ticket_link"=>"very hard", "video_link"=>"very hard", "price_range"=>"< $10", "description"=>"very hard", "performances_attributes"=>{"0"=>{"date"=>"3.4.5", "start_time"=>"2:00", "end_time"=>"4:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameters: performances_attributes, approved
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "thisi s hard"], ["writers", "very hard"], ["venue", "very hard"], ["performers", "very hard"], ["description", "very hard"], ["price_range", "< $10"], ["ticket_link", "very hard"], ["video_link", "very hard"], ["created_at", "2016-07-29 19:57:26.713389"], ["updated_at", "2016-07-29 19:57:26.713389"]]
+  [1m[35m (8.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/thankyou
+Completed 302 Found in 25ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/thankyou" for ::1 at 2016-07-29 15:57:26 -0400
+Processing by PagesController#thankyou as HTML
+  Rendered pages/thankyou.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 264ms (Views: 260.8ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 16:09:43 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/Users/christynbudzyna/calendar_project/calendar_project/app/controllers/events_controller.rb:30: syntax error, unexpected ':', expecting ')'
+...link, :performances_attributes: [:date, :start_time, :end_ti...
+...                               ^
+/Users/christynbudzyna/calendar_project/calendar_project/app/controllers/events_controller.rb:30: syntax error, unexpected ')', expecting keyword_end):
+  app/controllers/events_controller.rb:30: syntax error, unexpected ':', expecting ')'
+  app/controllers/events_controller.rb:30: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.7ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (98.0ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 16:10:29 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YO+rAzSx5uK/MaDr8q6VhPbQVrZe6ksaRSVfNXUnJW3Skbdp7WdLClMh0TKYBlDy2OSXStCZkwE8qiDwnBMvqA==", "event"=>{"title"=>"thisi s hard", "writers"=>"very hard", "venue"=>"very hard", "performers"=>"very hard", "ticket_link"=>"very hard", "video_link"=>"very hard", "price_range"=>"< $10", "description"=>"very hard", "performances_attributes"=>{"0"=>{"date"=>"3.4.5", "start_time"=>"2:00", "end_time"=>"4:00"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameter: approved
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "thisi s hard"], ["writers", "very hard"], ["venue", "very hard"], ["performers", "very hard"], ["description", "very hard"], ["price_range", "< $10"], ["ticket_link", "very hard"], ["video_link", "very hard"], ["created_at", "2016-07-29 20:10:29.273060"], ["updated_at", "2016-07-29 20:10:29.273060"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "performances" ("date", "start_time", "end_time", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["date", "0003-04-05"], ["start_time", "2:00"], ["end_time", "4:00"], ["event_id", 20], ["created_at", "2016-07-29 20:10:29.277248"], ["updated_at", "2016-07-29 20:10:29.277248"]]
+  [1m[36m (8.4ms)[0m  [1mCOMMIT[0m
+Unpermitted parameter: approved
+Redirected to http://localhost:3000/thankyou
+Completed 302 Found in 18161ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/thankyou" for ::1 at 2016-07-29 16:10:47 -0400
+Processing by PagesController#thankyou as HTML
+  Rendered pages/thankyou.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 274ms (Views: 271.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events/new" for ::1 at 2016-07-29 16:11:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/new.html.erb within layouts/application (27.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 353ms (Views: 308.0ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/events" for ::1 at 2016-07-29 16:12:11 -0400
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bXCYP1IYs93IX47I4szLMh4+I3bxtv/BDUXpi6tkb+nfDoRVi84eNSRP/xGIZA5EMAriin/FJ9p0ypZOQlBlLA==", "event"=>{"title"=>"will this work?", "writers"=>"please", "venue"=>"god", "performers"=>"work", "ticket_link"=>"please", "video_link"=>"ahh", "price_range"=>"< $10", "description"=>"a cool show", "performances_attributes"=>{"0"=>{"date"=>"4/5/23", "start_time"=>"1:00", "end_time"=>"1:30"}}, "approved"=>"false"}, "commit"=>"Submit New Event"}
+Unpermitted parameter: approved
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "writers", "venue", "performers", "description", "price_range", "ticket_link", "video_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["title", "will this work?"], ["writers", "please"], ["venue", "god"], ["performers", "work"], ["description", "a cool show"], ["price_range", "< $10"], ["ticket_link", "please"], ["video_link", "ahh"], ["created_at", "2016-07-29 20:12:11.571608"], ["updated_at", "2016-07-29 20:12:11.571608"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "performances" ("date", "start_time", "end_time", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["date", "0004-05-23"], ["start_time", "1:00"], ["end_time", "1:30"], ["event_id", 21], ["created_at", "2016-07-29 20:12:11.573704"], ["updated_at", "2016-07-29 20:12:11.573704"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/thankyou
+Completed 302 Found in 2907ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/thankyou" for ::1 at 2016-07-29 16:12:14 -0400
+Processing by PagesController#thankyou as HTML
+  Rendered pages/thankyou.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.3ms)
