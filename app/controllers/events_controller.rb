@@ -18,7 +18,6 @@ end
 def create
   @event = Event.new(event_params)
   if @event.save
-    binding.pry
     redirect_to "/thankyou"
   else
     render "events#new"
