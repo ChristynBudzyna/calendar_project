@@ -39,8 +39,18 @@
   </p>
   <p>
     <%=f.label :description %><br>
-    <%=f.text_area :description %>
+    <%=f.text_area :description, placeholder: "Add a description", id:"textarea1", class: "materialize-textarea" %>
   </p>
+  <h3>Add Performance</h3>
+    <p>
+    <%=f.fields_for :performances do |builder| %><br>
+      <p class="fields">
+        <%= render 'newperformance', f: builder %>
+      </p>
+    <% end %>
+  </p>
+
+
     <p>
     <%=f.hidden_field :approved?, :value => false %>
   </p>
@@ -48,4 +58,4 @@
    <p>
     <%=f.submit "Submit New Event" %>
   </p>
-<% end %>
+  <% end %>

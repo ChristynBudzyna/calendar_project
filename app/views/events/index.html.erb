@@ -6,7 +6,7 @@
 <div id="calendar">
   <h2 id="month">
     <%= link_to "<", :month => (@date.beginning_of_month-1) %>
-    <%=h @date.strftime("%B %Y") %>
+    <%= @date.strftime("%B %Y") %>
     <%= link_to ">", :month => (@date.end_of_month+1) %>
   </h2>
 
@@ -17,7 +17,7 @@
   <ul>
     <% performances.each do |performance| %>
       <li><%= link_to performance.event.title, event_path(performance.event.id) %></li>
-      <li><%= performance.start_time %> - <%= performance.end_time %></li>
+      <li><%= performance.formatted_time %></li>
     <% end %>
   </ul>
   <% end %>

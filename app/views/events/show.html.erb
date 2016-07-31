@@ -13,13 +13,21 @@ Performances:
   <ul>
     <li>
       <%= performance.date.strftime("%B %e, %Y") %>
-      <%= performance.start_time%> - <%=performance.end_time%>
+      <%= performance.formatted_time%>
     </li>
   </ul>
 <% end %>
 
-<% if @event.video_link %>
+<% if @event.video_link == nil || @event.video_link == ""%>
+<p>There's no video for this event </p>
+<% else %>
 <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/"+@event.format_video %>"></iframe>
 <% end %>
 
+<% if current_user.admin? == true %>
+  <%= link_to "Edit Event", edit_event_path(@event) %>
+<% end %>
+
 <a href="/events">Back to Calendar</a>
+
+
