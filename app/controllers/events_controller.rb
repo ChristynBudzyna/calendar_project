@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
 
 def index
-  @performances = Performance.joins(:event).where(:events => {:approved? => true})
+  # @performances = Performance.joins(:event).where(:events => {:approved? => true})
+  @performances = Performance.all
   @date = params[:month] ? Date.parse(params[:month]) : Date.today
 end
 

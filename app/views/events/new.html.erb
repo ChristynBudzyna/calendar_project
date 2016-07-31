@@ -48,7 +48,7 @@
         <%= performance.label :date, "Date" %>
         <%= performance.date_select :date,  include_blank: true, :start_year => Date.today.year %>
         <%= performance.label :start_time, "Time of Performance" %>
-        <%= performance.time_select :start_time, {:ampm => true, :default => {:hour => '20', :minute => '00'}, minute_step: 15, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, :include_blank => true} %>
+        <%= performance.time_select :start_time, {:ampm => true, :default => {:hour => '20', :minute => '00'}, minute_step: 15, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, :include_blank => true } %>
       </p>
     <% end %>
   </p>
