@@ -14,8 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require bootstrap-sprockets
+//= require bootstrap-datepicker
 
 $(document).ready(function() {
   $('select').material_select();
+
+
 });
 

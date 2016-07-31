@@ -41,15 +41,14 @@
     <%=f.label :description %><br>
     <%=f.text_area :description %>
   </p>
+  <h3>Add Performance</h3>
     <p>
     <%=f.fields_for :performances do |performance| %><br>
-      <p>
+      <p class="fields">
         <%= performance.label :date, "Date" %>
-        <%= performance.text_field :date %>
-        <%= performance.label :start_time, "Start Time" %>
-        <%= performance.text_field :start_time %>
-        <%= performance.label :end_time, "End Time" %>
-        <%= performance.text_field :end_time %>
+        <%= performance.date_select :date,  include_blank: true, :start_year => Date.today.year %>
+        <%= performance.label :start_time, "Time of Performance" %>
+        <%= performance.time_select :start_time, {:ampm => true, :default => {:hour => '20', :minute => '00'}, minute_step: 15, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, :include_blank => true} %>
       </p>
     <% end %>
   </p>

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
 def index
-  @performances = Performance.all
+  @performances = Performance.joins(:event).where(:events => {:approved? => true})
   @date = params[:month] ? Date.parse(params[:month]) : Date.today
 end
 
@@ -27,7 +27,7 @@ end
 
  private
     def event_params
-      params.require( :event ).permit( :title, :writers, :venue, :performers, :description, :price_range, :ticket_link, :video_link, performances_attributes: [:date, :start_time, :end_time])
+      params.require( :event ).permit( :title, :writers, :venue, :performers, :description, :price_range, :ticket_link, :video_link, :approved?, performances_attributes: [:date, :start_time, :end_time])
     end
 
     # def performance_params

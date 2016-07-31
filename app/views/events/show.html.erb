@@ -18,7 +18,9 @@ Performances:
   </ul>
 <% end %>
 
-<% if @event.video_link %>
+<% if @event.video_link == nil || @event.video_link == ""%>
+<p>There's no video for this event </p>
+<% else %>
 <iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/"+@event.format_video %>"></iframe>
 <% end %>
 

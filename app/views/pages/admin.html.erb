@@ -1,0 +1,32 @@
+<% if current_user.admin? == false %>
+  <p>Sorry, you don't have access to this page</p>
+<% else %>
+  <h3>Admin Approval Page</h3>
+
+<% @events.each do |event| %>
+
+<h1><%= event.title %></h1>
+
+<%= link_to "Buy Tickets", event.ticket_link %>
+<p>Written by: <%= event.writers %></p>
+<p>Starring: <%= event.performers %></p>
+<p>Venue: <%= event.venue %></p>
+<p>About <%= event.title%>: <%= event.description%></p>
+<p>Price Range: <%= event.price_range %></p>
+
+Performances:
+<% event.performances.each do |performance| %>
+  <ul>
+    <li>
+      <%= performance.date.strftime("%B %e, %Y") %>
+      <%= performance.start_time%> - <%=performance.end_time%>
+    </li>
+  </ul>
+<% end %>
+
+<% if event.video_link %>
+<iframe width="560" height="349" src="<%= "http://www.youtube.com/embed/"+event.format_video %>"></iframe>
+<% end %>
+
+<% end %>
+<% end %>
