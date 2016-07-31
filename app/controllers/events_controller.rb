@@ -12,7 +12,7 @@ end
 
 def new
   @event = Event.new
-  1.times { @event.performances.build }
+  5.times { @event.performances.build }
 end
 
 def create
@@ -21,6 +21,19 @@ def create
     redirect_to "/thankyou"
   else
     render "events#new"
+  end
+end
+
+def edit
+  @event = Event.find(params[:id])
+end
+
+def update
+   @event = Event.find(params[:id])
+   if @event.update_attributes(event_params)
+    redirect_to @event
+  else
+    render 'edit'
   end
 end
 
