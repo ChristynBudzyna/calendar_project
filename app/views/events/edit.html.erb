@@ -41,9 +41,23 @@
   <p>
     <%=f.label :description %><br>
     <%=f.text_area :description, placeholder: "Add a description", id:"textarea1", class: "materialize-textarea" %>
-  </p>
-    <%=f.label :approved?, id: "indeterminate-checkbox" %><br>
-    <%=f.check_box :approved?, {:checked=> true} %>
+
+Performances:
+<% @event.performances.each do |performance| %>
+  <ul>
+    <li>
+      <% if performance.date && performance.start_time %>
+      <%= performance.date.strftime("%B %e, %Y") %>
+      <%= performance.formatted_time%>
+    </li>
+  </ul>
+  <% end%>
+<% end %>
+
+
+    <p>
+    <%= f.label :approved %> <br />
+    <%= f.select :approved, [['true', true], ['false', false]], :class => "browser-default"%>
   </p>
 
    <p>

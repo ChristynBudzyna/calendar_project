@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(version: 20160725182934) do
     t.string   "price_range"
     t.string   "ticket_link"
     t.string   "video_link"
-    t.boolean  "approved?",   default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "user_id"
+    t.boolean  "approved"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -42,7 +43,6 @@ ActiveRecord::Schema.define(version: 20160725182934) do
 
   create_table "performances", force: :cascade do |t|
     t.string   "start_time"
-    t.string   "end_time"
     t.date     "date"
     t.integer  "event_id"
     t.datetime "created_at", null: false

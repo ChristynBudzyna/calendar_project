@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :events do
     resources :dates, only: :show
+    resources :performances, only: [:index, :new, :create, :update, :destroy]
   end
 
   get    'login'   => 'sessions#new'
