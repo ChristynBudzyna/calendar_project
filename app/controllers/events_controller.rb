@@ -1,8 +1,7 @@
 class EventsController < ApplicationController
 
 def index
-  # @performances = Performance.joins(:event).where(:events => {:approved? => true})
-  @performances = Performance.all
+  @performances = Performance.joins(:event).where(:events => {:approved => true})
   @date = params[:month] ? Date.parse(params[:month]) : Date.today
 end
 
@@ -31,6 +30,7 @@ end
 def update
    @event = Event.find(params[:id])
    if @event.update_attributes(event_params)
+    binding.pry
     redirect_to @event
   else
     render 'edit'
@@ -40,7 +40,7 @@ end
 
  private
     def event_params
-      params.require( :event ).permit( :title, :writers, :venue, :performers, :description, :price_range, :ticket_link, :video_link, :approved?, performances_attributes: [:date, :start_time, :end_time])
+      params.require( :event ).permit( :title, :writers, :venue, :performers, :description, :price_range, :ticket_link, :video_link, :approved, performances_attributes: [:date, :start_time, :end_time])
     end
 
     # def performance_params

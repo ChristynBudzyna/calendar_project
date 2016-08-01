@@ -9,7 +9,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :price_range
       t.string :ticket_link
       t.string :video_link
-      t.boolean :approved?, default: false
+      t.boolean :approved
 
       t.timestamps null: false
     end

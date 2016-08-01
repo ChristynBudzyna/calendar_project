@@ -1,12 +1,14 @@
-<% if current_user.admin? == false %>
-  <p>Sorry, you don't have access to this page</p>
-<% else %>
-  <h3>Admin Approval Page</h3>
+<% if current_user %>
+  <% if current_user.admin? == false %>
+    <p>Sorry, you don't have access to this page</p>
+  <% else %>
+    <h3>Admin Approval Page</h3>
 
-<% @events.each do |event| %>
+  <% @events.each do |event| %>
 
-<h4><%= link_to event.title, event_path(event) %></h4>
+  <h4><%= link_to event.title, event_path(event) %></h4>
 
-<% end %>
+  <% end %>
 
+  <% end %>
 <% end %>

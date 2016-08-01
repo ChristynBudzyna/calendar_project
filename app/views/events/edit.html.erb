@@ -41,9 +41,10 @@
   <p>
     <%=f.label :description %><br>
     <%=f.text_area :description, placeholder: "Add a description", id:"textarea1", class: "materialize-textarea" %>
-  </p>
-    <%=f.label :approved?, id: "indeterminate-checkbox" %><br>
-    <%=f.check_box :approved?, {:checked=> true} %>
+
+    <p>
+    <%= f.label :approved %> <br />
+    <%= f.select :approved, [['true', true], ['false', false]], :class => "browser-default"%>
   </p>
 
    <p>
