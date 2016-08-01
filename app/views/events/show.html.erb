@@ -12,10 +12,12 @@ Performances:
 <% @event.performances.each do |performance| %>
   <ul>
     <li>
+      <% if performance.date && performance.start_time %>
       <%= performance.date.strftime("%B %e, %Y") %>
       <%= performance.formatted_time%>
     </li>
   </ul>
+  <% end%>
 <% end %>
 
 <% if @event.video_link == nil || @event.video_link == ""%>
@@ -27,6 +29,7 @@ Performances:
 <% if current_user %>
   <% if current_user.admin? == true %>
     <%= link_to "Edit Event", edit_event_path(@event) %>
+     <%= link_to "Delete Event", @event, method: :delete, data: { confirm: "Are you sure you want to delete this event?" } %>
   <% end %>
 <% end %>
 

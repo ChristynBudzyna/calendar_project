@@ -11,13 +11,12 @@ end
 
 def new
   @event = Event.new
-  5.times { @event.performances.build }
 end
 
 def create
   @event = Event.new(event_params)
   if @event.save
-    redirect_to "/thankyou"
+    redirect_to new_event_performance_path( @event )
   else
     render "events#new"
   end
@@ -30,13 +29,18 @@ end
 def update
    @event = Event.find(params[:id])
    if @event.update_attributes(event_params)
-    binding.pry
     redirect_to @event
   else
     render 'edit'
   end
 end
 
+def destroy
+  Event.find(params[:id]).destroy
+    flash[:success] = "Event deleted"
+    redirect_to root_path
+
+end
 
  private
     def event_params
