@@ -17,10 +17,11 @@ def new
     @performance = Performance.create( performance_params )
     @event = Event.find_by( id: params[ :event_id ])
     @event.performances.push( @performance )
+    redirect_to thankyou_path
   end
 
  def performance_params
-      params.require( :place ).permit( :date, :start_time, :event_id )
+      params.require( :performance ).permit( :date, :start_time, :event_id )
     end
 
 end
