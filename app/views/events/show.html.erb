@@ -36,7 +36,7 @@ Performances:
 <% @event.performances.each do |performance| %>
   <ul>
     <li>
-      <% if performance.date && performance.start_time %>
+      <% if performance.date && performance.start %>
       <%= performance.date.strftime("%B %e, %Y") %>
       <%= performance.formatted_time%>
     </li>

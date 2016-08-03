@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160725182934) do
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "performances", force: :cascade do |t|
-    t.string   "start_time"
+    t.string   "start"
     t.date     "date"
     t.integer  "event_id"
     t.datetime "created_at", null: false

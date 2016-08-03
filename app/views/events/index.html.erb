@@ -3,24 +3,54 @@
 <% if logged_in? %>
   <%= link_to "Add An Event", new_event_path %>
 <% end %>
-<div id="calendar">
-  <h2 id="month">
-    <%= link_to "<", :month => (@date.beginning_of_month-1) %>
-    <%= @date.strftime("%B %Y") %>
-    <%= link_to ">", :month => (@date.end_of_month+1) %>
-  </h2>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a href="#tab1" class="active">Monthly View</a></li>
 
-<%= calendar_for(@performances, :year => @date.year, :month => @date.month) do |t| %>
-  <%= t.head('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday') %>
-  <%= t.day do |day, performances| %>
-    <%= day.day %>
-  <ul>
-    <% performances.each do |performance| %>
-      <li><%= link_to performance.event.title, event_path(performance.event.id) %></li>
-      <li><%= performance.formatted_time %></li>
+        <li class="tab col s3"><a href="#tab2">Weekly View</a></li>
+        <li class="tab col s3"><a href="#tab3">Daily View</a></li>
+      </ul>
+    </div>
+  </div>
+ <div class="row">
+    <div id="tab1" class="col s12">
+  <%= month_calendar events: @performances do |date, performances| %>
+  <%= date.day %>
+    <% performances.each do |p| %>
+    <div>
+       <p><%= link_to p.event.title, event_path(p.event.id) %>
+        <br>
+      <%= p.formatted_time %></p>
+    </div>
     <% end %>
-  </ul>
   <% end %>
-  <% end %>
+  </div>
 </div>
 
+<div class="row">
+<div id="tab2" class="col s12">
+ <%= week_calendar events: @performances do |date, performances| %>
+  <%= date.day %>
+    <% performances.each do |p| %>
+    <div>
+       <p><%= link_to p.event.title, event_path(p.event.id) %>
+        <br>
+      <%= p.formatted_time %></p>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+</div>
+
+<div id="tab3" class="col s12">
+  <h3>Today's Events</h3>
+  <ul>
+  <% @todays_performances.each do |p| %>
+  <li>
+  <%= p.event.title %>
+  </li>
+</ul>
+  <% end %>
+</div>

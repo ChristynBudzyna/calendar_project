@@ -17,6 +17,6 @@
 
 $(window).load(function() {
   $('select').material_select();
-
+   $('ul.tabs').tabs();
 });
 
