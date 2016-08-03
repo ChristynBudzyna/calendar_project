@@ -1,0 +1,15 @@
+<h2> Welcome, <%= current_user.email %> </h2>
+
+<% if @favorites.length == 0 %>
+You don't have any favorited shows.  Browse the calendar to add shows to your profile.
+
+<% else %>
+<h3>Your favorited shows </h3>
+<% @favorites.each do |fav| %>
+<ul>
+  <li>
+<%= link_to fav.title, event_path(fav.id) %></li>
+</ul>
+<% end %>
+
+<% end %>

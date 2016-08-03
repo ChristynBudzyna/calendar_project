@@ -7,6 +7,7 @@ end
 
 def show
   @event = Event.find_by(id: params[:id])
+  @favorite = Favorite.new
 end
 
 def new

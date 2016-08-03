@@ -7,5 +7,8 @@ class User < ActiveRecord::Base
   validates :password, length: { in: 6..20 }
   validates :role, presence: true
 
+ def favorite?(event)
+    true if self.favorites.where(event_id: event.id).length > 0
+  end
 
 end

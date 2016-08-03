@@ -16,6 +16,7 @@ end
 
 def show
   @user = User.find(params[:id])
+  @favorites = @user.events
 end
 
 private

@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>NewWorksCalendar</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 
   <%= csrf_meta_tags %>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
@@ -16,7 +16,7 @@
     <div class="nav-wrapper blue darken-2">
       <a href="/" class="brand-logo">New Works Calendar</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><%= link_to 'home', events_path %></li>
+          <li><%= link_to 'calendar', events_path %></li>
           <% if logged_in? %>
             <li><%= link_to "profile", user_path(current_user) %></li>
             <li><%= link_to 'log out', logout_path, method: "delete" %></li>
