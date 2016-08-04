@@ -12,12 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require jquery
 
 $(window).load(function() {
   $('select').material_select();
-
+   $('ul.tabs').tabs();
 });
 

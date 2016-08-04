@@ -3,10 +3,12 @@ class EventsController < ApplicationController
 def index
   @performances = Performance.joins(:event).where(:events => {:approved => true})
   @date = params[:month] ? Date.parse(params[:month]) : Date.today
+  @todays_performances= @performances.where(date: @date)
 end
 
 def show
   @event = Event.find_by(id: params[:id])
+  @favorite = Favorite.new
 end
 
 def new

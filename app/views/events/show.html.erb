@@ -2,6 +2,30 @@
 <h1><%= @event.title %></h1>
 
 <%= link_to "Buy Tickets", @event.ticket_link %>
+
+<% if logged_in? %>
+
+  <% if current_user.favorite?(@event) %>
+  <%= form_for :favorite, method: :delete, url: favorite_path do |f| %>
+  <div><%= hidden_field_tag "event_id", "#{@event.id}" %></div>
+  <%= button_tag(type: 'submit', class: "favorite-button") do %>
+  unfavorite
+  <% end %>
+<% end %>
+
+  <% else %>
+  <%= form_for(@favorite, url: favorites_path ) do |f| %>
+  <%= hidden_field_tag "event", "#{@event.id}" %>
+  <%= hidden_field_tag "user", "#{current_user.id}" %>
+  <%= button_tag(type: 'submit', class: "favorite-button") do %>
+  favorite
+    <% end %>
+  <% end %>
+<% end %>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+
 <p>Written by: <%= @event.writers %></p>
 <p>Starring: <%= @event.performers %></p>
 <p>Venue: <%= @event.venue %></p>
@@ -12,7 +36,7 @@ Performances:
 <% @event.performances.each do |performance| %>
   <ul>
     <li>
-      <% if performance.date && performance.start_time %>
+      <% if performance.date && performance.start %>
       <%= performance.date.strftime("%B %e, %Y") %>
       <%= performance.formatted_time%>
     </li>
