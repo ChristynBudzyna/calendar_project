@@ -1,4 +1,4 @@
-<div class="performance-fields">
+ <div class='nested-fields'>
   <script>
     $(document).ready(function() {
       $('select').material_select();
@@ -8,6 +8,7 @@
 <fieldset>
   <%= f.label :date, "Date" %>
   <%= f.date_select :date,  include_blank: true, :start_year => Date.today.year %>
+  <br>
   <%= f.label :start, "Time of Performance" %>
   <%= f.time_select :start, {:ampm => true, :default => {:hour => '20', :minute => '00'}, minute_step: 15, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, :include_blank => true } %>
 <%= f.label :event_id %>
