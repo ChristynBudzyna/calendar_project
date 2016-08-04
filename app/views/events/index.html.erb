@@ -3,14 +3,17 @@
 <% if logged_in? %>
   <%= link_to "Add An Event", new_event_path %>
 <% end %>
+<% if current_user.admin? == true %>
+  <%= link_to "Review Events", admin_path %>
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col s12">
       <ul class="tabs">
-        <li class="tab col s3"><a href="#tab1" class="active">Monthly View</a></li>
+        <li class="tab col s3"><a href="#tab1" class="active">This Month</a></li>
 
-        <li class="tab col s3"><a href="#tab2">Weekly View</a></li>
-        <li class="tab col s3"><a href="#tab3">Daily View</a></li>
+        <li class="tab col s3"><a href="#tab2">This Week</a></li>
+        <li class="tab col s3"><a href="#tab3">Today</a></li>
       </ul>
     </div>
   </div>
@@ -46,6 +49,9 @@
 
 <div id="tab3" class="col s12">
   <h3>Today's Events</h3>
+  <% if @todays_performances.length == 0 %>
+  There are no performances today.
+  <% else %>
   <ul>
   <% @todays_performances.each do |p| %>
   <li>
@@ -53,4 +59,5 @@
   </li>
 </ul>
   <% end %>
+<% end %>
 </div>
