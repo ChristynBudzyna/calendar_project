@@ -32,7 +32,7 @@ gem 'bootstrap', '~> 4.0.0.alpha3.1'
 
 gem 'bootstrap-datepicker-rails'
 
-
+gem "cocoon"
 # Use Unicorn as the app server
 # gem 'unicorn'
 

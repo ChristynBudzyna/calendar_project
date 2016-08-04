@@ -1,8 +1,0 @@
-<fieldset>
-  <%= f.label :date, "Date" %>
-  <%= f.date_select :date,  include_blank: true, :start_year => Date.today.year %>
-  <%= f.label :start_time, "Time of Performance" %>
-  <%= f.time_select :start_time, {:ampm => true, :default => {:hour => '20', :minute => '00'}, minute_step: 15, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, :include_blank => true } %>
-  <%= f.hidden_field :_destroy %>
-  <%= link_to "remove", '#', class:"remove_fields" %>
-</fieldset>
