@@ -14,9 +14,12 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery
+//= require cocoon
 
 $(window).load(function() {
   $('select').material_select();
    $('ul.tabs').tabs();
+    $('#performance-holder').material_select();
+
 });
 

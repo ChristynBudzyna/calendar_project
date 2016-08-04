@@ -44,8 +44,18 @@
     <p>
     <%=f.hidden_field :approved, :value => false %>
   </p>
+  <br><br>
 
-   <p>
-    <%=f.submit "Save Event Details and Add Performances" %>
-  </p>
-  <% end %>
+  <div id='performance-holder'>
+  <h3>Performances</h3>
+    <%= f.fields_for :performances do |performance| %>
+      <%= render 'performance_fields', :f => task %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add performance', f, :performances %>
+    </div>
+  </div>
+
+    <%= f.submit 'Submit Show' %>
+
+<% end %>

@@ -17,8 +17,9 @@ end
 
 def create
   @event = Event.new(event_params)
+  binding.pry
   if @event.save
-    redirect_to new_event_performance_path( @event )
+    redirect_to thankyou_path( @event )
   else
     render "events#new"
   end
@@ -46,7 +47,7 @@ end
 
  private
     def event_params
-      params.require( :event ).permit( :title, :writers, :venue, :performers, :description, :price_range, :ticket_link, :video_link, :approved, performances_attributes: [:date, :start_time, :end_time])
+      params.require( :event ).permit( :title, :writers, :venue, :performers, :description, :price_range, :ticket_link, :video_link, :approved, performances_attributes: [:date, :start, :_destroy])
     end
 
     # def performance_params
