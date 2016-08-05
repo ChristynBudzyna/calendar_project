@@ -37638,3 +37638,239 @@ Completed 200 OK in 344ms (Views: 301.3ms | ActiveRecord: 7.4ms)
 
 
 Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:23:57 -0400
+
+
+Started GET "/events/3" for ::1 at 2016-08-05 11:24:38 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.6ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFavorite Load (0.3ms)[0m  SELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2  [["user_id", 1], ["event_id", 3]]
+  [1m[36mPerformance Load (0.2ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 3]]
+  Rendered events/show.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 337ms (Views: 302.0ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:24:38 -0400
+
+
+Started GET "/events/3/edit" for ::1 at 2016-08-05 11:24:40 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mPerformance Load (0.3ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 3]]
+  Rendered events/edit.html.erb within layouts/application (18.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:24:40 -0400
+
+
+Started PATCH "/events/3" for ::1 at 2016-08-05 11:25:01 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R9zEMtia9NskCtJQUjTWIXEm0lZu30hOa7I63nFtcqbRdlsAATaS88U9/AmdLhqIHrdSQBKB0a+BTMvHCVlSWA==", "event"=>{"title"=>"NOT APPROVED", "writers"=>"Christyn Budzyna", "venue"=>"New World Stages", "performers"=>"Dottie Cohen", "ticket_link"=>"http://www.facebook.com", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fea35ca1238 @tempfile=#<Tempfile:/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/RackMultipart20160805-79200-1pluhj5.jpg>, @original_filename="61itJPZEuhL.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[image]\"; filename=\"61itJPZEuhL.jpg\"\r\nContent-Type: image/jpeg\r\n">, "video_link"=>"https://youtu.be/g9qMo7rDXRc", "price_range"=>"$20-$30", "description"=>"Best show ever", "approved"=>"true"}, "commit"=>"Save Event", "id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-1u4vgg6.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-93nhyw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-93nhyw.jpg[0]'
+Command :: convert '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-93nhyw.jpg[0]' -auto-orient -resize "600x600>" '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/357d775c63914efcbb9a7d9b9d2abd9320160805-79200-184eqv7'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-93nhyw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-93nhyw.jpg[0]'
+Command :: convert '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-93nhyw.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/357d775c63914efcbb9a7d9b9d2abd9320160805-79200-g9bdhw'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-93nhyw.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-93nhyw.jpg[0]'
+Command :: convert '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-93nhyw.jpg[0]' -auto-orient -resize "x150" -crop "150x150+19+0" +repage '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/357d775c63914efcbb9a7d9b9d2abd9320160805-79200-1w0cobc'
+Command :: file -b --mime '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/2b33440d79557977c052ab2db85b142420160805-79200-gznwmb.jpg'
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "events" SET "image_file_name" = $1, "image_content_type" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "events"."id" = $6[0m  [["image_file_name", "61itJPZEuhL.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 66769], ["image_updated_at", "2016-08-05 15:25:01.615983"], ["updated_at", "2016-08-05 15:25:01.822835"], ["id", 3]]
+  [1m[35m (5.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/events/3
+Completed 302 Found in 235ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/events/3" for ::1 at 2016-08-05 11:25:01 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2[0m  [["user_id", 1], ["event_id", 3]]
+  [1m[35mPerformance Load (0.2ms)[0m  SELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1  [["event_id", 3]]
+  Rendered events/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:25:01 -0400
+
+
+Started GET "/" for ::1 at 2016-08-05 11:25:08 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPerformance Load (0.3ms)[0m  SELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1  [["approved", "t"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_month_calendar.html.erb (17.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_week_calendar.html.erb (4.2ms)
+  Rendered events/_weekly_calendar.html.erb (7.3ms)
+  [1m[36mPerformance Load (0.3ms)[0m  [1mSELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1 AND "performances"."date" = $2[0m  [["approved", "t"], ["date", "2016-08-05"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered events/index.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 66ms (Views: 61.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:25:09 -0400
+
+
+Started GET "/" for ::1 at 2016-08-05 11:33:08 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPerformance Load (0.4ms)[0m  SELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1  [["approved", "t"]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_month_calendar.html.erb (12.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_week_calendar.html.erb (3.3ms)
+  Rendered events/_weekly_calendar.html.erb (6.0ms)
+  [1m[36mPerformance Load (0.4ms)[0m  [1mSELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1 AND "performances"."date" = $2[0m  [["approved", "t"], ["date", "2016-08-05"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered events/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/bootstrap-datepicker3.self-cecdc38e8ebc9f6ec46a7d6cec3ee25701beba7139d96f25deb67705fca8db4b.css?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/simple_calendar.self-642491353674f29679e83eb97fbb4f0f0906a9b4dc9e0e4d3c352536654e7ef5.css?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/events.self-145f1aac302d5ffcb5d6a9a4ab05869c3349dcf958cab33268183ba4aef0208a.js?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/application.self-f9dc5f730ece555c1801d13073d87cedce1e2e09f4ab5f90f17ad9ba7e1be4d2.css?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/performance.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/application.self-6890ce8425697a2f339fcc6768dbf9a94152146073c2f085912aec2a533115b8.js?body=1" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:33:08 -0400
+
+
+Started GET "/" for ::1 at 2016-08-05 11:33:09 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPerformance Load (0.4ms)[0m  SELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1  [["approved", "t"]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_month_calendar.html.erb (15.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_week_calendar.html.erb (3.7ms)
+  Rendered events/_weekly_calendar.html.erb (6.0ms)
+  [1m[36mPerformance Load (0.6ms)[0m  [1mSELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1 AND "performances"."date" = $2[0m  [["approved", "t"], ["date", "2016-08-05"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered events/index.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:33:09 -0400
+
+
+Started GET "/events/1" for ::1 at 2016-08-05 11:33:10 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2[0m  [["user_id", 1], ["event_id", 1]]
+  [1m[35mPerformance Load (0.2ms)[0m  SELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:33:10 -0400
+
+
+Started GET "/events/1" for ::1 at 2016-08-05 11:33:18 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mFavorite Load (0.3ms)[0m  [1mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2[0m  [["user_id", 1], ["event_id", 1]]
+  [1m[35mPerformance Load (0.2ms)[0m  SELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:33:18 -0400
+
+
+Started GET "/events/2" for ::1 at 2016-08-05 11:33:21 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2[0m  [["user_id", 1], ["event_id", 2]]
+  [1m[35mPerformance Load (0.2ms)[0m  SELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1  [["event_id", 2]]
+  Rendered events/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:33:21 -0400
+
+
+Started GET "/events/3" for ::1 at 2016-08-05 11:33:24 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2[0m  [["user_id", 1], ["event_id", 3]]
+  [1m[35mPerformance Load (0.2ms)[0m  SELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1  [["event_id", 3]]
+  Rendered events/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:33:24 -0400
+
+
+Started GET "/events/5" for ::1 at 2016-08-05 11:33:29 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mFavorite Load (0.1ms)[0m  [1mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2[0m  [["user_id", 1], ["event_id", 5]]
+  [1m[35mPerformance Load (0.2ms)[0m  SELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1  [["event_id", 5]]
+  Rendered events/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:33:29 -0400
