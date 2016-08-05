@@ -36883,3 +36883,69 @@ Completed 200 OK in 61ms (Views: 57.5ms | ActiveRecord: 2.4ms)
 
 
 Started GET "/assets/bootstrap" for ::1 at 2016-08-05 10:53:30 -0400
+
+
+Started GET "/events/new" for ::1 at 2016-08-05 10:55:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/_performance_fields.html.erb (6.8ms)
+  Rendered events/new.html.erb within layouts/application (84.7ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 436ms (Views: 403.4ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 10:55:31 -0400
+
+
+Started GET "/" for ::1 at 2016-08-05 10:55:41 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPerformance Load (0.7ms)[0m  SELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1  [["approved", "t"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_month_calendar.html.erb (27.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_week_calendar.html.erb (3.7ms)
+  Rendered events/_weekly_calendar.html.erb (7.9ms)
+  [1m[36mPerformance Load (0.5ms)[0m  [1mSELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1 AND "performances"."date" = $2[0m  [["approved", "t"], ["date", "2016-08-05"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered events/index.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 103ms (Views: 97.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 10:55:41 -0400
+
+
+Started GET "/events?start_date=2016-09-05" for ::1 at 2016-08-05 10:56:02 -0400
+Processing by EventsController#index as HTML
+  Parameters: {"start_date"=>"2016-09-05"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPerformance Load (0.3ms)[0m  SELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1  [["approved", "t"]]
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_month_calendar.html.erb (17.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_week_calendar.html.erb (4.9ms)
+  Rendered events/_weekly_calendar.html.erb (7.4ms)
+  [1m[35mPerformance Load (0.3ms)[0m  SELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1 AND "performances"."date" = $2  [["approved", "t"], ["date", "2016-08-05"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered events/index.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 77ms (Views: 74.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 10:56:02 -0400
+
+
+Started GET "/events/5" for ::1 at 2016-08-05 10:56:05 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFavorite Load (6.0ms)[0m  SELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2  [["user_id", 1], ["event_id", 5]]
+  [1m[36mPerformance Load (0.2ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 5]]
+  Rendered events/show.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 52ms (Views: 31.8ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 10:56:05 -0400
