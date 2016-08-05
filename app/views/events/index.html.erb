@@ -34,16 +34,7 @@
 
 <div class="row">
 <div id="tab2" class="col s12">
- <%= week_calendar events: @performances do |date, performances| %>
-  <%= date.day %>
-    <% performances.each do |p| %>
-    <div>
-       <p><%= link_to p.event.title, event_path(p.event.id) %>
-        <br>
-      <%= p.formatted_time %></p>
-    </div>
-    <% end %>
-  <% end %>
+<%= render 'weekly_calendar' %>
 </div>
 </div>
 
