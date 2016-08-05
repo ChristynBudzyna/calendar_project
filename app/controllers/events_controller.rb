@@ -9,6 +9,10 @@ end
 def show
   @event = Event.find_by(id: params[:id])
   @favorite = Favorite.new
+
+  if request.xhr?
+      render :partial => 'eventpreview', layout: false, locals:{event: @event}
+    end
 end
 
 def new

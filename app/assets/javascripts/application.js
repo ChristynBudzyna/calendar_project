@@ -18,8 +18,24 @@
 
 $(window).load(function() {
   $('select').material_select();
-   $('ul.tabs').tabs();
-    $('#performance-holder').material_select();
+  $('ul.tabs').tabs();
+  $('#performance-holder').material_select();
 
+  $('.showevent').hover(function(e){
+      e.preventDefault()
+      var url = $(e.target).attr("href");
+      $.ajax({
+        url: url,
+      }).done(function(response){
+        debugger;
+        var event_id = $(this).attr("url").split('').pop();
+        var event = $("#event" + event_id);
+        event.append(response);
+      }),
+      mouseout: function() {
+        event.preventDefault();
+        $("#event" + event_id).hide();
+    }
+    });
 });
 

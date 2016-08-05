@@ -17,20 +17,29 @@
       </ul>
     </div>
   </div>
+
+
  <div class="row">
     <div id="tab1" class="col s12">
   <%= month_calendar events: @performances do |date, performances| %>
   <%= date.day %>
     <% performances.each do |p| %>
     <div>
-       <p><%= link_to p.event.title, event_path(p.event.id) %>
+       <p>
+         <div id="event<%=p.event.id%>">
+          <%= link_to p.event.title, event_path(p.event.id), class: "showevent" %></div>
         <br>
       <%= p.formatted_time %></p>
+      <div id="event<%=p.event.id%>"></div>
     </div>
+
+
     <% end %>
   <% end %>
   </div>
 </div>
+
+
 
 <div class="row">
 <div id="tab2" class="col s12">
