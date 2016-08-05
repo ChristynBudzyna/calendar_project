@@ -36949,3 +36949,692 @@ Completed 200 OK in 52ms (Views: 31.8ms | ActiveRecord: 7.9ms)
 
 
 Started GET "/assets/bootstrap" for ::1 at 2016-08-05 10:56:05 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentImageToEvents (20160805151151)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.8ms)[0m  [1mALTER TABLE "events" ADD "image_file_name" character varying[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "events" ADD "image_content_type" character varying
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "events" ADD "image_file_size" integer[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "events" ADD "image_updated_at" timestamp
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20160805151151"]]
+  [1m[35m (2.4ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (13.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'favorites'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'performances'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/events/new" for ::1 at 2016-08-05 11:13:45 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#new as HTML
+  Rendered events/_performance_fields.html.erb (9.1ms)
+  Rendered events/new.html.erb within layouts/application (89.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 424ms (Views: 401.8ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/events/new" for ::1 at 2016-08-05 11:13:45 -0400
+Processing by EventsController#new as HTML
+  Rendered events/_performance_fields.html.erb (2.6ms)
+  Rendered events/new.html.erb within layouts/application (8.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:13:45 -0400
+
+
+Started GET "/events/1" for ::1 at 2016-08-05 11:16:42 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFavorite Load (0.4ms)[0m  SELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2  [["user_id", 1], ["event_id", 1]]
+  [1m[36mPerformance Load (0.2ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 71ms (Views: 47.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:16:42 -0400
+
+
+Started GET "/events/1/edit" for ::1 at 2016-08-05 11:16:45 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mPerformance Load (0.2ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/edit.html.erb within layouts/application (5.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 54ms (Views: 52.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:16:45 -0400
+
+
+Started GET "/events/1/edit" for ::1 at 2016-08-05 11:17:20 -0400
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPerformance Load (0.3ms)[0m  SELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1  [["event_id", 1]]
+  Rendered events/edit.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.self-f9dc5f730ece555c1801d13073d87cedce1e2e09f4ab5f90f17ad9ba7e1be4d2.css?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/simple_calendar.self-642491353674f29679e83eb97fbb4f0f0906a9b4dc9e0e4d3c352536654e7ef5.css?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/bootstrap-datepicker3.self-cecdc38e8ebc9f6ec46a7d6cec3ee25701beba7139d96f25deb67705fca8db4b.css?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/events.self-145f1aac302d5ffcb5d6a9a4ab05869c3349dcf958cab33268183ba4aef0208a.js?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/performance.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started GET "/assets/application.self-6890ce8425697a2f339fcc6768dbf9a94152146073c2f085912aec2a533115b8.js?body=1" for ::1 at 2016-08-05 11:17:20 -0400
+
+
+Started PATCH "/events/1" for ::1 at 2016-08-05 11:17:34 -0400
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+OI2DdDLz48wEUog6rF7gwdUpTAiHUeauxhyo09e+qVuSKk/CWepp9EmZHklq7cqaMUlJl5D3ntR5oO6N2raWw==", "event"=>{"title"=>"The Prince & the Wooglefoof", "writers"=>"Christyn Budzyna", "venue"=>"New World Stages", "performers"=>"Dottie Cohen", "ticket_link"=>"http://www.facebook.com", "image"=>#<ActionDispatch::Http::UploadedFile:0x007f842a2e62c8 @tempfile=#<Tempfile:/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/RackMultipart20160805-79023-1j0vijf.jpg>, @original_filename="wooglefoof.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"event[image]\"; filename=\"wooglefoof.jpg\"\r\nContent-Type: image/jpeg\r\n">, "video_link"=>"https://youtu.be/g9qMo7rDXRc", "price_range"=>"$20-$30", "description"=>"Best show ever", "approved"=>"true"}, "commit"=>"Save Event", "id"=>"1"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-ygjjbc.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-qra0ok.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-qra0ok.jpg[0]'
+Command :: convert '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-qra0ok.jpg[0]' -auto-orient -resize "600x600>" '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/81b6027ce85a96388e4028c388901a5520160805-79023-d4so6'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-qra0ok.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-qra0ok.jpg[0]'
+Command :: convert '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-qra0ok.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/81b6027ce85a96388e4028c388901a5520160805-79023-1kih7ts'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-qra0ok.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-qra0ok.jpg[0]'
+Command :: convert '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-qra0ok.jpg[0]' -auto-orient -resize "x150" -crop "150x150+22+0" +repage '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/81b6027ce85a96388e4028c388901a5520160805-79023-noysiz'
+Command :: file -b --mime '/var/folders/7d/dv_6ht813_x1mm2fkj3h3k4w0000gn/T/5c3dc8b6aea39429b6c199c07a0de36720160805-79023-ksp1q5.jpg'
+  [1m[35mSQL (0.4ms)[0m  UPDATE "events" SET "image_file_name" = $1, "image_content_type" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "events"."id" = $6  [["image_file_name", "wooglefoof.jpg"], ["image_content_type", "image/jpeg"], ["image_file_size", 61107], ["image_updated_at", "2016-08-05 15:17:34.546452"], ["updated_at", "2016-08-05 15:17:34.776482"], ["id", 1]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 268ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/events/1" for ::1 at 2016-08-05 11:17:34 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFavorite Load (0.3ms)[0m  SELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2  [["user_id", 1], ["event_id", 1]]
+  [1m[36mPerformance Load (0.3ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:17:34 -0400
+
+
+Started GET "/events/1" for ::1 at 2016-08-05 11:18:53 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.5ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFavorite Load (0.2ms)[0m  SELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2  [["user_id", 1], ["event_id", 1]]
+  [1m[36mPerformance Load (0.3ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 42ms (Views: 39.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap-datepicker3.self-cecdc38e8ebc9f6ec46a7d6cec3ee25701beba7139d96f25deb67705fca8db4b.css?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/simple_calendar.self-642491353674f29679e83eb97fbb4f0f0906a9b4dc9e0e4d3c352536654e7ef5.css?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/application.self-f9dc5f730ece555c1801d13073d87cedce1e2e09f4ab5f90f17ad9ba7e1be4d2.css?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/events.self-145f1aac302d5ffcb5d6a9a4ab05869c3349dcf958cab33268183ba4aef0208a.js?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/performance.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/assets/application.self-6890ce8425697a2f339fcc6768dbf9a94152146073c2f085912aec2a533115b8.js?body=1" for ::1 at 2016-08-05 11:18:53 -0400
+
+
+Started GET "/events/1" for ::1 at 2016-08-05 11:19:19 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFavorite Load (0.2ms)[0m  SELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2  [["user_id", 1], ["event_id", 1]]
+  [1m[36mPerformance Load (0.2ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/simple_calendar.self-642491353674f29679e83eb97fbb4f0f0906a9b4dc9e0e4d3c352536654e7ef5.css?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/bootstrap-datepicker3.self-cecdc38e8ebc9f6ec46a7d6cec3ee25701beba7139d96f25deb67705fca8db4b.css?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/events.self-145f1aac302d5ffcb5d6a9a4ab05869c3349dcf958cab33268183ba4aef0208a.js?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/application.self-f9dc5f730ece555c1801d13073d87cedce1e2e09f4ab5f90f17ad9ba7e1be4d2.css?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/performance.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/application.self-6890ce8425697a2f339fcc6768dbf9a94152146073c2f085912aec2a533115b8.js?body=1" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:19:19 -0400
+
+
+Started GET "/events/1" for ::1 at 2016-08-05 11:19:26 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFavorite Load (0.2ms)[0m  SELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2  [["user_id", 1], ["event_id", 1]]
+  [1m[36mPerformance Load (0.2ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-f9dc5f730ece555c1801d13073d87cedce1e2e09f4ab5f90f17ad9ba7e1be4d2.css?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/bootstrap-datepicker3.self-cecdc38e8ebc9f6ec46a7d6cec3ee25701beba7139d96f25deb67705fca8db4b.css?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/simple_calendar.self-642491353674f29679e83eb97fbb4f0f0906a9b4dc9e0e4d3c352536654e7ef5.css?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/events.self-145f1aac302d5ffcb5d6a9a4ab05869c3349dcf958cab33268183ba4aef0208a.js?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/performance.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/assets/application.self-6890ce8425697a2f339fcc6768dbf9a94152146073c2f085912aec2a533115b8.js?body=1" for ::1 at 2016-08-05 11:19:26 -0400
+
+
+Started GET "/events/new" for ::1 at 2016-08-05 11:21:22 -0400
+Processing by EventsController#new as HTML
+  Rendered events/_performance_fields.html.erb (2.9ms)
+  Rendered events/new.html.erb within layouts/application (10.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 58ms (Views: 57.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-f9dc5f730ece555c1801d13073d87cedce1e2e09f4ab5f90f17ad9ba7e1be4d2.css?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/bootstrap-datepicker3.self-cecdc38e8ebc9f6ec46a7d6cec3ee25701beba7139d96f25deb67705fca8db4b.css?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/simple_calendar.self-642491353674f29679e83eb97fbb4f0f0906a9b4dc9e0e4d3c352536654e7ef5.css?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/events.self-145f1aac302d5ffcb5d6a9a4ab05869c3349dcf958cab33268183ba4aef0208a.js?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/performance.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/assets/application.self-6890ce8425697a2f339fcc6768dbf9a94152146073c2f085912aec2a533115b8.js?body=1" for ::1 at 2016-08-05 11:21:22 -0400
+
+
+Started GET "/" for ::1 at 2016-08-05 11:21:30 -0400
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mPerformance Load (0.4ms)[0m  SELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1  [["approved", "t"]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_month_calendar.html.erb (13.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/simple_calendar-2.1.5/app/views/simple_calendar/_week_calendar.html.erb (4.0ms)
+  Rendered events/_weekly_calendar.html.erb (7.3ms)
+  [1m[36mPerformance Load (0.3ms)[0m  [1mSELECT "performances".* FROM "performances" INNER JOIN "events" ON "events"."id" = "performances"."event_id" WHERE "events"."approved" = $1 AND "performances"."date" = $2[0m  [["approved", "t"], ["date", "2016-08-05"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered events/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 57ms (Views: 53.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:21:31 -0400
+
+
+Started GET "/events/3" for ::1 at 2016-08-05 11:21:36 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mFavorite Load (0.2ms)[0m  [1mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2[0m  [["user_id", 1], ["event_id", 3]]
+  [1m[35mPerformance Load (0.2ms)[0m  SELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1  [["event_id", 3]]
+  Rendered events/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-08-05 11:21:36 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (92.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (46.0ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (106.9ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:21:36 -0400
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-08-05 11:21:36 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (78.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (107.7ms)
+
+
+Started GET "/events/3" for ::1 at 2016-08-05 11:22:01 -0400
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mFavorite Load (0.1ms)[0m  [1mSELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2[0m  [["user_id", 1], ["event_id", 3]]
+  [1m[35mPerformance Load (0.2ms)[0m  SELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1  [["event_id", 3]]
+  Rendered events/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-f9dc5f730ece555c1801d13073d87cedce1e2e09f4ab5f90f17ad9ba7e1be4d2.css?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/simple_calendar.self-642491353674f29679e83eb97fbb4f0f0906a9b4dc9e0e4d3c352536654e7ef5.css?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/bootstrap-datepicker3.self-cecdc38e8ebc9f6ec46a7d6cec3ee25701beba7139d96f25deb67705fca8db4b.css?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/events.self-145f1aac302d5ffcb5d6a9a4ab05869c3349dcf958cab33268183ba4aef0208a.js?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/favorites.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/performance.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/cocoon.self-6874ad698cefd21cc1119b773550f61b5c1a60396460f015222af59293affe80.js?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/assets/application.self-6890ce8425697a2f339fcc6768dbf9a94152146073c2f085912aec2a533115b8.js?body=1" for ::1 at 2016-08-05 11:22:01 -0400
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-08-05 11:22:01 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (90.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.8ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (101.9ms)
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 3]]
+
+
+Started GET "/events/3" for ::1 at 2016-08-05 11:22:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.5ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFavorite Load (0.3ms)[0m  SELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2  [["user_id", 1], ["event_id", 3]]
+  [1m[36mPerformance Load (0.2ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 3]]
+  Rendered events/show.html.erb within layouts/application (44.8ms)
+Completed 200 OK in 352ms (Views: 308.0ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:22:49 -0400
+
+
+Started GET "/images/medium/missing.png" for ::1 at 2016-08-05 11:22:49 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/medium/missing.png"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.9ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (98.1ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/christynbudzyna/.rvm/gems/ruby-2.1.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (120.6ms)
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 3]]
+
+
+Started GET "/events/3" for ::1 at 2016-08-05 11:23:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mFavorite Load (0.3ms)[0m  SELECT "favorites".* FROM "favorites" WHERE "favorites"."user_id" = $1 AND "favorites"."event_id" = $2  [["user_id", 1], ["event_id", 3]]
+  [1m[36mPerformance Load (0.2ms)[0m  [1mSELECT "performances".* FROM "performances" WHERE "performances"."event_id" = $1[0m  [["event_id", 3]]
+  Rendered events/show.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 344ms (Views: 301.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/assets/bootstrap" for ::1 at 2016-08-05 11:23:57 -0400

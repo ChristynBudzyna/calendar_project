@@ -47,7 +47,7 @@ end
 
  private
     def event_params
-      params.require( :event ).permit( :title, :writers, :venue, :performers, :description, :price_range, :ticket_link, :video_link, :approved, performances_attributes: [:date, :start, :_destroy])
+      params.require( :event ).permit( :title, :writers, :venue, :performers, :description, :price_range, :ticket_link, :image, :video_link, :approved, performances_attributes: [:date, :start, :_destroy])
     end
 
     # def performance_params

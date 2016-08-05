@@ -25,7 +25,11 @@
 <% end %>
 
 <p id="notice"><%= notice %></p>
-
+<% if @event.image.url == "/images/original/missing.png" %>
+  <div></div>
+<% else %>
+  <%= image_tag @event.image.url(:medium) %>
+<% end %>
 <p>Written by: <%= @event.writers %></p>
 <p>Starring: <%= @event.performers %></p>
 <p>Venue: <%= @event.venue %></p>
