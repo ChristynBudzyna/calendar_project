@@ -2,9 +2,11 @@
 <h1>Upcoming New Works</h1>
 <% if logged_in? %>
   <%= link_to "Add An Event", new_event_path %>
-<% end %>
 <% if current_user.admin? == true %>
   <%= link_to "Review Events", admin_path %>
+<% end %>
+<% else %>
+<%=link_to "Sign Up", new_user_path %> or <%=link_to "Login", login_path %> to submit an event to the calendar.
 <% end %>
 <div class="container">
   <div class="row">
@@ -24,16 +26,14 @@
   <%= month_calendar events: @performances do |date, performances| %>
   <%= date.day %>
     <% performances.each do |p| %>
-    <div>
+
        <p>
-         <div id="event<%=p.event.id%>">
           <%= link_to p.event.title, event_path(p.event.id), class: "showevent" %></div>
         <br>
       <%= p.formatted_time %></p>
-      <div id="event<%=p.event.id%>"></div>
-    </div>
 
-
+       <div class="preview-holder" id="event<%=p.event.id%>">
+      </div>
     <% end %>
   <% end %>
   </div>

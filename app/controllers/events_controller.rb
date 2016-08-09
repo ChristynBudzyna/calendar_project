@@ -21,7 +21,6 @@ end
 
 def create
   @event = Event.new(event_params)
-  binding.pry
   if @event.save
     redirect_to thankyou_path( @event )
   else
