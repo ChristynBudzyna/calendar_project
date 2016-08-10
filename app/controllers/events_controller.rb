@@ -9,6 +9,10 @@ end
 def show
   @event = Event.find_by(id: params[:id])
   @favorite = Favorite.new
+
+  if request.xhr?
+      render :partial => 'eventpreview', layout: false, locals:{event: @event}
+    end
 end
 
 def new
@@ -17,7 +21,6 @@ end
 
 def create
   @event = Event.new(event_params)
-  binding.pry
   if @event.save
     redirect_to thankyou_path( @event )
   else

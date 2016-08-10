@@ -18,8 +18,33 @@
 
 $(window).load(function() {
   $('select').material_select();
-   $('ul.tabs').tabs();
-    $('#performance-holder').material_select();
+  $('ul.tabs').tabs();
+  $('#performance-holder').material_select();
 
+  //   $(function(){
+  //   $('.showevent').mouseenter(function(e){
+  //     e.preventDefault()
+  //     var url = $(e.target).attr("href");
+  //     $.ajax({
+  //       url: url,
+  //     }).done(function(response){
+  //     var event_id = $(this).attr("url").split('').pop();
+  //     var event = $("#event" + event_id);
+  //       event.append(response);
+  //    });
+  //   })
+  //   $('.showevent').mouseleave(function(){
+  //       $(".preview-holder").children().remove();
+  //   });
+  // });
+
+$('.showevent').hover(function() {
+  var id = this.id
+    $('#hidden'+id).show();
+}, function() {
+  var id = this.id
+  $('#hidden'+id).hide();
 });
+});
+
 
