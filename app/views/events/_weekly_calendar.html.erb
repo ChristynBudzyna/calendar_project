@@ -2,10 +2,19 @@
 <%= week_calendar events: @performances do |date, performances| %>
   <%= date.day %>
     <% performances.each do |p| %>
-    <div>
-       <p><%= link_to p.event.title, event_path(p.event.id) %>
+
+      <p>
+          <%= link_to p.event.title, event_path(p.event.id), class: "showevent", id: "#{p.id}" %>
         <br>
       <%= p.formatted_time %></p>
+
+      <div class="hidden" id="hidden<%=p.id%>" />
+        <%= p.event.title %>
+        <%= image_tag p.event.image.url(:thumb) %>
+        <%= button_to "Buy Tickets", p.event.ticket_link %>
+      </div>
+
+
     </div>
     <% end %>
   <% end %>

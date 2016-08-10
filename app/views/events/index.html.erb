@@ -28,12 +28,17 @@
     <% performances.each do |p| %>
 
        <p>
-          <%= link_to p.event.title, event_path(p.event.id), class: "showevent" %></div>
+          <%= link_to p.event.title, event_path(p.event.id), class: "showevent", id: "#{p.id}" %>
         <br>
       <%= p.formatted_time %></p>
 
-       <div class="preview-holder" id="event<%=p.event.id%>">
+      <div class="hidden" id="hidden<%=p.id%>" />
+        <%= p.event.title %><br>
+        <%= image_tag p.event.image.url(:thumb) %>
+        <%= button_to "Buy Tickets", p.event.ticket_link %>
       </div>
+    <!--    <div class="preview-holder" id="event<%=p.event.id%>">
+      </div> -->
     <% end %>
   <% end %>
   </div>
